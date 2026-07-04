@@ -623,40 +623,18 @@ document.getElementById('loginForm').addEventListener('submit', function(e){
   btn.disabled = true; btn.textContent = 'Memeriksa...';
 
   google.script.run
-  .withSuccessHandler(function(user) {
-    btn.disabled = false;
-    btn.textContent = 'Masuk';
-
-    localStorage.setItem(
-      SESSION_KEY,
-      JSON.stringify(user)
-    );
-
-    setCurrentUser(user);
-    showApp();
-  })
-  .withFailureHandler(function(err) {
-    btn.disabled = false;
-    btn.textContent = 'Masuk';
-
-    errBox.textContent = err.message || String(err);
-    errBox.classList.add('show');
-  })
-  .login(username, password);
-
-document.getElementById('createAdminLink')
-  .addEventListener('click', function(e) {
-
-    e.preventDefault();
-
-    google.script.run
-      .withSuccessHandler(function(res) {
-        alert(res.message || 'Selesai.');
-      })
-      .withFailureHandler(function(err) {
-        alert('Gagal: ' + (err.message || err));
-      })
-      .createDefaultAdmin();
+    .withSuccessHandler(function(user){
+      btn.disabled = false; btn.textContent = 'Masuk';
+      localStorage.setItem(SESSION_KEY, JSON.stringify(user));
+      setCurrentUser(user);
+      showApp();
+    })
+    .withFailureHandler(function(err){
+      btn.disabled = false; btn.textContent = 'Masuk';
+      errBox.textContent = err.message || String(err);
+      errBox.classList.add('show');
+    })
+    .login(username, password);
 });
 
 document.getElementById('logoutBtn').addEventListener('click', function(){
