@@ -767,7 +767,7 @@ function renderDashboard(stats){
   document.getElementById('statDocs').textContent = stats.totalDocs;
   document.getElementById('statDocsSub').textContent = stats.totalDocs>0 ? '100% Tersimpan aman' : 'Belum ada dokumen';
   document.getElementById('statBuses').textContent = stats.totalBuses;
-  document.getElementById('statBusesSub').textContent = stats.busAktif+' Aktif • '+stats.busBreakdown+' Standby' • '+stats.busBreakdown+' Breakdown';
+  document.getElementById('statBusesSub').textContent = stats.busAktif+' Aktif • '+stats.busBreakdown+' Breakdown';
   document.getElementById('statDrivers').textContent = stats.driverAktif;
   document.getElementById('statDriversSub').textContent = stats.driverAktif+' Permanent •  '+stats.driverLain+' Contrak';
   document.getElementById('statCompliance').textContent = stats.compliance+'%';
