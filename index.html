@@ -615,8 +615,7 @@ var ARMADA_CONFIG = {
       { key:'jenis_armada', label:'Jenis Armada' },
       { key:'kapasitas', label:'Kapasitas' },
       { key:'tanggal_commissioning', label:'Commissioning' },
-      { key:'status', label:'Status' },
-      { key:'rute', label:'Rute' },
+      { key:'status', label:'Status' }
     ],
     fields:[
       { key:'bu', label:'BU (Badan Usaha)', type:'select', options:['HJF','KPS','OST','CKM'], required:true },
@@ -624,8 +623,7 @@ var ARMADA_CONFIG = {
       { key:'jenis_armada', label:'Jenis Armada', type:'select', options:['LV','LT','DT','MH','BUS'], required:true },
       { key:'kapasitas', label:'Kapasitas (seat)', type:'number', required:true },
       { key:'tanggal_commissioning', label:'Tanggal Commissioning', type:'date', required:false },
-      { key:'status', label:'Status', type:'select', options:['Aktif','Standby','Breakdown'], required:true },
-      { key:'rute', label:'Rute', type:'text', required:true }
+      { key:'status', label:'Status', type:'select', options:['Aktif','Standby','Breakdown'], required:true }
     ],
     statusColors:{ 'Aktif':'status-aktif', 'Standby':'status-lain', 'Breakdown':'status-nonaktif' },
     getFn:'getBuses', addFn:'addBus', updateFn:'updateBus', deleteFn:'deleteBus'
