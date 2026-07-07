@@ -1206,7 +1206,7 @@ function deleteUserRow(id){
 /* =========================================================================
    MONITORING ARMADA
 ========================================================================= */
-var TRIP_SLOTS = ['Pagi','Pagi','Pagi','Pagi','Pagi','Sore','Sore','Sore','sore','Sore'];
+var TRIP_SLOTS = ['Pagi','Pagi','Pagi','Pagi','Pagi','Pagi','Sore','Sore','Sore','Sore','sore','Sore'];
 
 document.querySelectorAll('#view-monitoring .subtab').forEach(function(el){
   el.addEventListener('click', function(){
@@ -1264,7 +1264,7 @@ function renderMonitoringTable(){
   html+='</tbody></table>'; wrap.innerHTML=html;
 }
 
-/** Buka form dengan 10 slot trip (I-X) sekaligus untuk satu No Lambung. */
+/** Buka form dengan 12 slot trip (I-XII) sekaligus untuk satu No Lambung. */
 function openMonitoringForm(noLambung){
   state.monitoringEditingNoLambung = noLambung || null;
   document.getElementById('monitoringFormTitle').textContent = noLambung ? 'Edit Jadwal Armada' : 'Tambah Jadwal Armada';
@@ -1332,7 +1332,7 @@ function deleteMonitoringBusRow(noLambung){
  * Tampilan "Lihat" — meniru gaya tabel jadwal fisik (header dwibahasa,
  * kolom No Lambung & Trip digabung/merge, pewarnaan berselang per grup trip).
  */
-var TRIP_ORDER = ['Pagi','Pagi','Pagi','Pagi','Pagi','Sore','Sore','Sore','Sore','Sore'];
+var TRIP_ORDER = ['Pagi','Pagi','Pagi','Pagi','Pagi','Pagi','Sore','Sore','Sore','Sore','Sore','Sore'];
 function viewMonitoringDetail(noLambung){
   var rows = state.monitoring.filter(function(r){ return String(r.no_lambung)===String(noLambung); });
   rows.sort(function(a,b){ return TRIP_ORDER.indexOf(a.trip) - TRIP_ORDER.indexOf(b.trip); });
