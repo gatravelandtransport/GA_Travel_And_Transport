@@ -229,7 +229,7 @@
         <div class="ver">ARSIP DIGITAL V2.0</div>
       </div>
     </div>
-    <h1>Masuk ke Terminal Dispatch</h1>
+    <h1>Masuk Ke GAT HJF, KPS, OST, CKM</h1>
     <div class="sub">Silakan masuk menggunakan akun yang terdaftar.</div>
     <div class="login-error" id="loginError"></div>
     <form id="loginForm">
@@ -618,20 +618,20 @@ var ARMADA_CONFIG = {
   bus:{
     idField:'id',
     columns:[
-      { key:'bu', label:'BU (Badan Usaha)' },
       { key:'no_lambung', label:'No Lambung' },
       { key:'jenis_armada', label:'Jenis Armada' },
       { key:'kapasitas', label:'Kapasitas' },
       { key:'tanggal_commissioning', label:'Commissioning' },
-      { key:'status', label:'Status' }
+      { key:'status', label:'Status' },
+      { key:'bu', label:'BU (Badan Usaha)' }
     ],
     fields:[
-      { key:'bu', label:'BU (Badan Usaha)', type:'select', options:['HJF','KPS','OST','CKM'], required:true },
       { key:'no_lambung', label:'No Lambung', type:'text', required:true },
       { key:'jenis_armada', label:'Jenis Armada', type:'select', options:['LV','LT','DT','MH','BUS'], required:true },
       { key:'kapasitas', label:'Kapasitas (seat)', type:'number', required:true },
       { key:'tanggal_commissioning', label:'Tanggal Commissioning', type:'date', required:false },
-      { key:'status', label:'Status', type:'select', options:['Aktif','Standby','Breakdown'], required:true }
+      { key:'status', label:'Status', type:'select', options:['Aktif','Standby','Breakdown'], required:true },
+      { key:'bu', label:'BU (Badan Usaha)', type:'select', options:['HJF','KPS','OST','CKM'], required:true }
     ],
     statusColors:{ 'Aktif':'status-aktif', 'Standby':'status-lain', 'Breakdown':'status-nonaktif' },
     getFn:'getBuses', addFn:'addBus', updateFn:'updateBus', deleteFn:'deleteBus'
