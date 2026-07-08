@@ -1444,7 +1444,7 @@ function downloadDocReport(){
   var cols = DOC_CONFIG.columns.concat([{ key:'_status', label:'Status' }]);
   var exportRows = rows.map(function(r){
     var copy = Object.assign({}, r);
-    copy._status = r.tanggal_terima ? 'Sudah Diambil' : 'Belum Diambil';
+    copy._status = r.tanggal_serah_terima ? 'Sudah Diambil' : 'Belum Diambil';
     return copy;
   });
   exportCSV('Laporan_Arsip_Digital_'+todayStamp()+'.csv', cols, exportRows);
